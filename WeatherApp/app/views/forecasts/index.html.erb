@@ -1,0 +1,63 @@
+
+
+<%= render "partials/header_nav" %>
+
+  <main class="mdl-layout__content">
+
+    
+    <div class="mdl-grid">
+        <div class="search mdl-cell mdl-cell--12-col mdl-cell--top">
+                <h2>What to wear in...</h2>
+                 <form action="/forecasts" method="get">
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text"  name="city" pattern="[A-Z,a-z, ]*">
+                        <label class="mdl-textfield__label" for="city" style="font-size: 150%"><em><%= @city %></em></label>
+                        <span class="mdl-textfield__error">Enter a city name</span>
+                    </div>
+                    <div class="state mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text"  name="state" pattern="[A-Z]{2}">
+                        <label class="mdl-textfield__label" for="state" style="font-size: 150%"><em><%= @state %></em></label>
+                        <span class="mdl-textfield__error">Enter the 2-letter state abbreviation</span>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-button--icon" type="submit">
+                        <i class="material-icons">search</i>
+                    </button>
+                </form>
+        </div
+    </div>
+    
+    
+    <div class="mdl-grid">
+        <% @forecast_hash.each do |day| %>    
+        <div class="weather mdl-cell mdl-cell--3-col mdl-cell--top">
+        <div class="weather-card mdl-card mdl-shadow--4dp">
+            <div class="weather mdl-card__supporting-text">
+                <h4><%= day["weekday"].upcase %></h4>
+             
+                <h3><%= day["high_temp"] %>&deg;</h3>
+                <h4><%= day["low_temp"] %>&deg;</h4>
+                <p><%= day["conditions"] %></p>
+                <p><%= day["rain"] %>% chance of rain</p>
+              </div>
+             <div class="mdl-card__supporting-text">
+              <img src="<%= day["image_url"][0] %>" width="100%">
+              <h6><%= day["clothes"][0] %></h6>
+              <img src="<%= day["image_url"][1] %>" width="100%">
+              <p><%= day["clothes"][1]  %></p>
+              <img src="<%= day["image_url"][2] %>" width="100%">
+              <p><%= day["clothes"][2]  %></p>
+              </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    
+ 
+    
+
+
+  </main>
+</div>
+
+
+

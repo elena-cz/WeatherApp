@@ -1,0 +1,137 @@
+// Place all the styles related to the Forecasts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.locations.mdl-layout-title {
+    font-family: 'Josefin Slab', serif;
+    font-weight: 300;
+    font-size: 200%;
+    margin: 0px;
+}
+
+.locations-drawer-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 12px;
+
+}
+
+.locations-drawer-header h1 {
+    font-family: 'Josefin Slab', serif;
+    font-weight: 300;
+    font-size: 200%;
+}
+
+.location.mdl-navigation {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+
+}
+
+
+.location-links {
+
+}
+
+.location-links table {
+    width: 100%;
+}
+
+.location-links td.delete {
+    text-align: right;
+}
+
+.location-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.location-links a:hover {
+    text-decoration: none;
+    color: #A7FFEB;
+}
+
+.add-location {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+
+.account-links {
+    position: absolute; 
+    bottom: 30px;
+}
+
+.account-links a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+
+.account-links a:hover {
+    color: #A7FFEB;
+}
+
+
+.weather.mdl-cell {
+    padding: 10px;
+}
+
+.weather-card.mdl-card {
+    width: 100%;
+    text-align: center;
+    
+
+}
+.weather-card > .weather.mdl-card__supporting-text {
+
+  background-color: #A7FFEB;
+  color: #212121;
+}
+
+
+
+.search.mdl-grid {
+    width: 100%;
+    text-align: center;
+
+    
+}
+
+.search.mdl-cell {
+    text-align: center;
+    
+}
+
+.search.mdl-cell h2 {
+    font-family: 'Josefin Slab', serif;
+    color: #3F51B5;
+    
+}
+
+.state.mdl-textfield {
+    width: 80px;
+    height: 150%;
+    
+}
+.search.mdl-button {
+    height: 60px;
+    width: 60px
+    
+}
+
+
+ul {
+    list-style:none;
+    padding-left:0;
+}
+
+
+.devise_links a {
+    text-decoration: none;
+    text-transform: uppercase;
+}

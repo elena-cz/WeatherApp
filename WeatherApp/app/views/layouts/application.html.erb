@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WeatherStyle</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-green.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Josefin+Slab:400,300,600' rel='stylesheet' type='text/css'>
+
+
+
+</head>
+<body>
+
+
+<%= yield %>
+
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+
+
+
+<%= javascript_include_tag 'application' %>
+
+</body>
+</html>

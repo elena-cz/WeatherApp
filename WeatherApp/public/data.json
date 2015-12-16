@@ -1,0 +1,30 @@
+{
+  "ranges": [
+    {
+      "max_temp": 50,
+      "min_temp": 41,
+      "outfits": [
+        ["Knit sweater", "Skinny jeans", "Ankle boots"],
+        ["Tunic", "Leggings", "Riding boots"]
+      ]
+    },
+    {
+      "max_temp": 60,
+      "min_temp": 51,
+      "outfits": [
+        ["Cardigan", "Pencil skirt", "Ankle boots"],
+        ["Blouse", "Skinny jeans", "Ballet flats"],
+        ["Sweater", "Boyfriend jeans", "Sneakers"]
+      ]
+    },
+    {
+      "max_temp": 100,
+      "min_temp": 61,
+      "outfits": [
+        ["Button-down", "Skinny jeans", "Sneakers"],
+        ["Chambray shirt", "Black jeans", "Slip-ons"],
+        ["Blouse", "Cropped jeans", "Ballet flats"]
+      ]
+    }
+  ]
+}

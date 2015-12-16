@@ -1,0 +1,40 @@
+<main class="mdl-layout__content">
+<div class="mdl-card">
+  <div class="mdl-card__title">
+   <h2 class="mdl-card__title-text">Sign in to save locations</h2>
+    </div>
+  <div class="mdl-card__supporting-text">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+ <br/>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
+        Sign In
+    </button>
+<% end %>
+
+ <div class="devise_links">
+    <h6><%= render "devise/shared/links" %></h6>
+  </div>
+  
+ </div> 
+</div>
+
+</main>
+
+
+

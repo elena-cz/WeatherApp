@@ -1,0 +1,54 @@
+<main class="mdl-layout__content">
+<div class="mdl-card">
+  <div class="mdl-card__title">
+   <h2 class="mdl-card__title-text">Edit <%= resource_name.to_s.humanize %></h2>
+</div>
+  <div class="mdl-card__supporting-text">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div
+  <br />
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
+        Update
+    </button>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+ <div class="devise_links">
+    <h6><%= link_to "Back", :back %></h6>
+    <br/>
+  </div>
+  
+ </div> 
+</div>
+
+</main>
+
+
+

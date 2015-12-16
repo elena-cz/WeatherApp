@@ -1,0 +1,57 @@
+<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
+  <div class="mdl-layout__drawer mdl-color--indigo-500 mdl-color-text--grey-50">
+  <header class="locations-drawer-header">
+    <h1>WeatherStyle</h1>
+    <hr>
+  </header>
+  
+    <nav class="location mdl-navigation">
+        <h6 style="text-align: center">SAVED LOCATIONS</h6>
+        <% if user_signed_in? %>
+                <div class="location-links">
+                <table>
+                <% @forecasts.each do |location| %>
+                <tr>
+                    <td>
+                        <a href="/forecasts?city=<%= location.city_name %>&state=<%= location.state_code %>"><%= location.city_name %></a>
+                    </td>
+                    <td class="delete">
+                    <%= form_tag(forecast_path(location.id), method: "DELETE") do %>
+                    <button type="submit" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">delete</i></button>
+                    <% end %>
+                    </td>
+                </tr>
+                <% end %>
+                </table>
+                </div>
+        <% end %>
+        
+      <div class="add-location">
+      <%= form_for @forecast do |f| %>
+        <%= f.hidden_field :city_name, :value => @city %>
+        <%= f.hidden_field :state_code, :value => @state %>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--teal-A100" type="submit">
+            <i class="material-icons">add</i>
+        </button>
+      <% end %>
+      </div>
+
+      <div class="account-links">
+
+            <% if user_signed_in? %>
+                <%= link_to "Sign out", destroy_user_session_path, method: "DELETE" %>
+            <% end %>
+            <% if !user_signed_in? %>
+                <%= link_to "Sign in", new_user_session_path %>
+                <br/>
+                <%= link_to "Sign up", new_user_registration_path %>
+            <% end %>
+      <div>
+     
+    </nav>
+  </div>
+
+
